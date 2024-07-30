@@ -5,7 +5,7 @@
       <div class="head">
         <img class="logo" src="./assets/brand.svg" alt="" />
       </div>
-      <div class="desc">{{ 'app.passport.desc' | i18n }}</div>
+      <div class="desc" style="color: white">{{ 'app.passport.desc' | i18n }}</div>
     </div>
     <div nz-row [nzGutter]="16">
       <div nz-col [nzXs]="{ span: 24 }" [nzLg]="{ span: 10, offset: 2 }">
@@ -41,11 +41,10 @@
         <router-outlet></router-outlet>
       </div>
     </div>
-    <global-footer style="border-top: 1px solid #d692e3; margin-top: auto">
+    <global-footer style="margin-top: auto">
       <div style="margin-top: 30px">
         Apache HertzBeat (incubating) {{ version }}<br />
-        Copyright &copy; {{ currentYear }}
-        <a href="https://hertzbeat.apache.org" target="_blank">Apache HertzBeat</a>
+        Copyright &copy; {{ currentYear }} Apache HertzBeat
         <br />
         Licensed under the Apache License, Version 2.0
       </div>

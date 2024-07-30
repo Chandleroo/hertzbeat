@@ -73,14 +73,14 @@ import { CONSTANTS } from '../../shared/constants';
         <router-outlet></router-outlet>
       </ng-template>
     </layout-default>
-    <global-footer style="border-top: 1px solid #e5e5e5; min-height: 120px; margin:0;">
-      <div style="margin-top: 30px">
-        Apache HertzBeat (incubating) {{ version }}<br />
-        Copyright &copy; {{ currentYear }}
-        <a href="https://hertzbeat.apache.org" target="_blank">Apache HertzBeat</a>
-        <br />
-        Licensed under the Apache License, Version 2.0
-      </div>
+    <global-footer style="min-height: 120px; margin:0;">
+<!--      <div style="margin-top: 30px">-->
+<!--        Apache HertzBeat (incubating) {{ version }}<br />-->
+<!--        Copyright &copy; {{ currentYear }}-->
+<!--        <a href="https://hertzbeat.apache.org" target="_blank">Apache HertzBeat</a>-->
+<!--        <br />-->
+<!--        Licensed under the Apache License, Version 2.0-->
+<!--      </div>-->
     </global-footer>
     <setting-drawer *ngIf="showSettingDrawer"></setting-drawer>
   `

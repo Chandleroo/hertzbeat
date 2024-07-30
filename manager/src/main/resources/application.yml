@@ -66,32 +66,32 @@ spring:
       on-profile: prod
 
   datasource:
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: 123456
-    url: jdbc:h2:./data/hertzbeat;MODE=MYSQL
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Zd!@2023
+    url: jdbc:mysql://172.16.111.21:13306/hertzbeat?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
     hikari:
       max-lifetime: 120000
 
   jpa:
     show-sql: false
     database-platform: org.eclipse.persistence.platform.database.MySQLPlatform
-    database: h2
+    database: mysql
     properties:
       eclipselink:
         logging:
           level: SEVERE
-          
+
   flyway:
     enabled: true
     clean-disabled: true
     baseline-on-migrate: true
     baseline-version: 1
     locations:
-      - classpath:db/migration/{vendor}
-    
+      - classpath:db/migration/mysql/V160_update_column.sql
+
   mail:
-    # Mail server address, eg: qq-mailbox is smtp.qq.com, qq-exmail is smtp.exmail.qq.com  
+    # Mail server address, eg: qq-mailbox is smtp.qq.com, qq-exmail is smtp.exmail.qq.com
     host: smtp.qq.com
     username: tancloud@qq.com
     # Attention this is not email account password, this requires an email authorization code
@@ -121,15 +121,15 @@ warehouse:
   store:
     # store history metrics data, enable only one below
     jpa:
-      enabled: true
+      enabled: false
       # The maximum retention time for history records, after which records will be deleted
       expire-time: 1h
       # The maximum number of history records retained, if this number is exceeded, half of the data in this configuration item will be deleted
       # (please set this configuration reasonably as history records can affect performance when it is large)
       max-history-record-num: 6000
     victoria-metrics:
-      enabled: false
-      url: http://localhost:8428
+      enabled: true
+      url: http://172.16.111.23:8428
       username: root
       password: root
     td-engine:
@@ -172,10 +172,10 @@ warehouse:
       # redis mode: single, sentinel, cluster. Default is single
       mode: single
       # separate each address with comma when using cluster mode, eg: 127.0.0.1:6379,127.0.0.1:6380
-      address: 127.0.0.1:6379
+      address: 172.16.111.23:16379
       # enter master name when using sentinel mode
       masterName: mymaster
-      password: 123456
+      password: hlzd@263
       # redis db index, default: DB0
       db: 0
 
@@ -206,10 +206,10 @@ scheduler:
 # See the documentation for details : https://hertzbeat.apache.org/zh-cn/docs/help/aiConfig
 ai:
   # AI Type:zhiPu、alibabaAi、kimiAi、sparkDesk
-  type:
+  type: kimiAi
   # Model name：glm-4、qwen-turboo、moonshot-v1-8k、generalv3.5
-  model:
+  model: moonshot-v1-32k
   # api key
-  api-key:
+  api-key: sk-wg4oBKYcmPlo2yYbhFEDPMRB8fZCQlA4qxmRjd8iDBvKcKLY
   #At present, only IFLYTEK large model needs to be filled in
   api-secret:
