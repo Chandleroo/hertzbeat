@@ -165,10 +165,10 @@ warehouse:
   # store real-time metrics data, enable only one below
   real-time:
     memory:
-      enabled: true
+      enabled: false
       init-size: 16
     redis:
-      enabled: false
+      enabled: true
       # redis mode: single, sentinel, cluster. Default is single
       mode: single
       # separate each address with comma when using cluster mode, eg: 127.0.0.1:6379,127.0.0.1:6380

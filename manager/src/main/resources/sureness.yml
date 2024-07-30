@@ -103,18 +103,21 @@ excludedResource:
 # eg: lili has role [guest], plain password is lili, salt is 123, salted password is 1A676730B0C7F54654B0E09184448289
 account:
   - appId: admin
-    credential: hertzbeat
+    credential: 7118827475259B87542A4B908AB7422F
+    salt: 123
     role: [admin]
   - appId: tom
-    credential: hertzbeat
+    credential: 4CC83DD553B4BFE2681124BB3572270E
+    salt: 123
     role: [user]
   - appId: guest
-    credential: hertzbeat
+    credential: 37B3389A60EE6D41CB58B481EEC6CE63
+    salt: 123
     role: [guest]
   - appId: lili
     # credential = MD5(password + salt)
     # plain password: hertzbeat
     # attention: digest authentication does not support salted encrypted password accounts
-    credential: 94C6B34E7A199A9F9D4E1F208093B489
+    credential: EEA96649F6F97F7337AF91698A2CE227
     salt: 123
     role: [user]
