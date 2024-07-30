@@ -32,7 +32,7 @@ RUN localedef -c -f UTF-8 -i en_US en_US.UTF-8
 ADD apache-hertzbeat-${VERSION}-incubating-bin.tar.gz /opt/
 
 ENV TZ=Asia/Shanghai
-ENV LANG=en_US.UTF-8
+ENV LANG=zh_CN.UTF-8
 
 RUN mv /opt/apache-hertzbeat-${VERSION}-incubating-bin /opt/hertzbeat
 
